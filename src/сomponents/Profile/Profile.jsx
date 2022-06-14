@@ -1,7 +1,22 @@
-const Profile = () =>  {
+import NewPost from "./Posts/NewPost";
+import Posts from "./Posts/Posts";
+
+const Profile = ( {profilePage, updateNewPostText, addPost, ...props} ) => {
     return (
         <div>
-            Profile
+            <div>
+                Posts
+            </div>
+            <div>
+                <NewPost 
+                newPostText={profilePage.newPostText} 
+                updateNewPostText={updateNewPostText} 
+                addPost={addPost} />
+            </div>
+            <div>
+                <Posts 
+                posts={profilePage.postsData} />
+            </div>
         </div>
     )
 }

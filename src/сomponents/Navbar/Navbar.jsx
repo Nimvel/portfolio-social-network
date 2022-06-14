@@ -1,9 +1,7 @@
 import style from './Navbar.module.css';
 import NavigationLink from './NavLink/NavigationLink';
 
-let name = ['profile', 'dialogs', 'friends', 'users']
-
-const Navbar = () => {
+const Navbar = ( {navData, ...props} ) => {
     return (
         <div className={style.navbar}>
             <div className={style.social_network_name}>
@@ -13,7 +11,7 @@ const Navbar = () => {
                 login or profile
             </div>
             <div className={style.navigation}>
-                <NavigationLink name={name} />
+                <NavigationLink navData={navData} />
             </div>
         </div>
     )

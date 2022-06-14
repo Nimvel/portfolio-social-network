@@ -4,17 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import state, { addPost, updateNewPostText } from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-    <Route path='/*' element={<App />} />
-    </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+
+export let rerender = (state) => {
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+      <Routes>
+      <Route path='/*' element={<App state={state} addPost={addPost} updateNewPostText={updateNewPostText} />} />
+      </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+}
+
+window.state = state;
+
+rerender(state);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

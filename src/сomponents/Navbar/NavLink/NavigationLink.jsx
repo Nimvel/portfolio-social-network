@@ -1,9 +1,9 @@
 import style from '../Navbar.module.css';
 import { StyledNavLink } from './StyledNavLink';
 
-const NavigationLink = (props) => {
+const NavigationLink = ( {navData, ...props} ) => {
 
-    let navLinkElements = props.name.map(n => <StyledNavLink to={`/${n}`} name={n} /> )
+    let navLinkElements = navData.map(n => <StyledNavLink to={`/${n.name}`} key={n.id} name={n.name} /> )
 
     return (
             <div className={style.navigation_wrapper}>

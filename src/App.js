@@ -7,18 +7,21 @@ import Navbar from './сomponents/Navbar/Navbar';
 import Profile from './сomponents/Profile/Profile';
 import Users from './сomponents/Users/Users';
 
-function App() {
+function App({ state, updateNewPostText, addPost, ...props }) {
   return (
     <div className="App">
       <div className='header'>
         <Header />
       </div>
       <div>
-        <Navbar />
+        <Navbar navData={state.navData} />
       </div>
       <div className='content'>
         <Routes>
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<Profile
+            profilePage={state.profilePage}
+            addPost={addPost}
+            updateNewPostText={updateNewPostText} />} />
           <Route path='/dialogs' element={<Dialogs />} />
           <Route path='/friends' element={<Friends />} />
           <Route path='/users' element={<Users />} />

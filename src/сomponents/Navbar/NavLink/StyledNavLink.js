@@ -24,7 +24,6 @@ let images = {
 let size = '50px';
 let size_active = '80px';
 
-
 export const StyledNavLink = styled(NavLink)`
 ${props => props.name && css`
         position: relative;
@@ -34,21 +33,22 @@ ${props => props.name && css`
         width: ${size};
         height: ${size};
     &:hover {
-        background-image: url(${images[props.name+"_active"]});
+        background-image: url(${images[props.name + "_active"]});
         background-size: ${size_active};
         width: ${size_active};
         height: ${size_active};
     }
-    .active{
-        background-image: url(${images[props.name+"_active"]});
+    &.active{
+        background-image: url(${images[props.name + "_active"]});
         background-size: ${size};
         width: ${size};
         height: ${size};
     }
-    .active:hover {
+    &.active:hover {
         background-size: ${size_active};
         width: ${size_active};
         height: ${size_active};
     }
-    `}
-    `;
+    `
+}`;
+
