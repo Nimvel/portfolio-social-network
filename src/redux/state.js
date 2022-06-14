@@ -6,7 +6,6 @@ import friends from "../assets/images/friends.png";
 import friends_active from "../assets/images/friends_active.png";
 import users from "../assets/images/users.png";
 import users_active from "../assets/images/users_active.png";
-import { rerender } from "..";
 
 // export const images = {
 //     profile,
@@ -18,6 +17,10 @@ import { rerender } from "..";
 //     users,
 //     users_active,
 // }
+
+let rerender = () => {
+    console.log('state changed')
+};
 
 let state = {
     navData: [
@@ -36,7 +39,7 @@ let state = {
     }
 }
 
-export let addPost = newPostText => {
+export const addPost = newPostText => {
     let newPost = {
         id: 4, userImg: dialogs, message: newPostText, likesCount: 0
     };
@@ -44,9 +47,13 @@ export let addPost = newPostText => {
     rerender(state)
 }
 
-export let updateNewPostText = newPostText => {
+export const updateNewPostText = newPostText => {
     state.profilePage.newPostText = newPostText;
     rerender(state)
+}
+
+export const subscribe = (observer) => {
+    rerender = observer; //паттерн
 }
 
 export default state;
