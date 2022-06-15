@@ -1,7 +1,7 @@
 import NewPost from "./Posts/NewPost";
 import Posts from "./Posts/Posts";
 
-const Profile = ( {profilePage, updateNewPostText, addPost, ...props} ) => {
+const Profile = ( {profilePage, dispatch, ...props} ) => {
     return (
         <div>
             <div>
@@ -10,8 +10,7 @@ const Profile = ( {profilePage, updateNewPostText, addPost, ...props} ) => {
             <div>
                 <NewPost 
                 newPostText={profilePage.newPostText} 
-                updateNewPostText={updateNewPostText} 
-                addPost={addPost} />
+                dispatch={dispatch} />
             </div>
             <div>
                 <Posts 

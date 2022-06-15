@@ -18,42 +18,66 @@ import users_active from "../assets/images/users_active.png";
 //     users_active,
 // }
 
-let rerender = () => {
-    console.log('state changed')
-};
+// let rerender = () => {
+//     console.log('state changed')
+// };
 
-let state = {
-    navData: [
-        { id: 1, name: 'profile',  },
-        { id: 2, name: 'dialogs' },
-        { id: 3, name: 'friends' },
-        { id: 4, name: 'users' }
-    ],
-    profilePage: {
-        postsData: [
-            { id: 1, userImg: profile, message: 'one', likesCount: 0 },
-            { id: 2, userImg: friends, message: 'two', likesCount: 4 },
-            { id: 3, userImg: users, message: 'three', likesCount: 9 }
+let ADD_POST = 'ADD_POST';
+let UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+
+let store = {
+    _state: {
+        navData: [
+            { id: 1, name: 'profile', },
+            { id: 2, name: 'dialogs' },
+            { id: 3, name: 'friends' },
+            { id: 4, name: 'users' }
         ],
-        newPostText: '',
+        profilePage: {
+            postsData: [
+                { id: 1, userImg: profile, message: 'one', likesCount: 0 },
+                { id: 2, userImg: friends, message: 'two', likesCount: 4 },
+                { id: 3, userImg: users, message: 'three', likesCount: 9 }
+            ],
+            newPostText: '',
+        }
+    },
+    _callSubscriber() { console.log('state changed') },
+    _subscribe(observer) {
+        this._callSubscriber = observer; //паттерн
+    },
+
+    getState() { return this._state },
+
+    // _addPost(newPostText) {
+    //     let newPost = {
+    //         id: 4, userImg: dialogs, message: newPostText, likesCount: 0
+    //     };
+    //     this._state.profilePage.postsData.push(newPost);
+    //     this._callSubscriber(this.state)
+    // },
+    // _updateNewPostText(newPostText) {
+    //     this._state.profilePage.newPostText = newPostText;
+    //     this._callSubscriber(this.state)
+    // },
+
+    dispatch(action) {
+        switch (action.type) {
+            case ADD_POST:
+                let newPost = { id: 4, userImg: dialogs, message: this._state.profilePage.newPostText, likesCount: 0 };
+                this._state.profilePage.postsData.push(newPost);
+                this._state.profilePage.newPostText = '';
+                this._callSubscriber(this._state);
+            case UPDATE_NEW_POST_TEXT:
+                this._state.profilePage.newPostText = action.newPostText;
+                this._callSubscriber(this._state)
+        }
     }
 }
 
-export const addPost = newPostText => {
-    let newPost = {
-        id: 4, userImg: dialogs, message: newPostText, likesCount: 0
-    };
-    state.profilePage.postsData.push(newPost);
-    rerender(state)
-}
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newPostText: text });
 
-export const updateNewPostText = newPostText => {
-    state.profilePage.newPostText = newPostText;
-    rerender(state)
-}
+window.store = store;
 
-export const subscribe = (observer) => {
-    rerender = observer; //паттерн
-}
-
-export default state;
+export default store;
