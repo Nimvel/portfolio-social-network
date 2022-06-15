@@ -40,6 +40,22 @@ let store = {
                 { id: 3, userImg: users, message: 'three', likesCount: 9 }
             ],
             newPostText: '',
+        },
+        dialogsPage: {
+            comradesData: [
+                { id: 1, comradeName: 'Dohaku', comradeImg: profile, comradeId: 1, lastMessage: 'hi, how are you?' },
+                { id: 2, comradeName: 'Orkast', comradeImg: friends, comradeId: 2, lastMessage: 'ohayou, ogenkidesuka?' },
+                { id: 3, comradeName: 'Margery', comradeImg: users, comradeId: 3, lastMessage: 'nihao, nihaoma?' }
+            ],
+            messagesData: [
+                { id: 1, message: 'hi, how are you?' },
+                { id: 2, message: 'ohayou, ogenkidesuka?' },
+                { id: 3, message: 'nihao, nihaoma?' },
+                { id: 4, message: 'dfgdfgfg' },
+                { id: 5, message: 'sdgfgdg' },
+                { id: 6, message: 'dfgdhgthj' }
+            ],
+            newMessageText: '',
         }
     },
     _callSubscriber() { console.log('state changed') },
@@ -48,18 +64,6 @@ let store = {
     },
 
     getState() { return this._state },
-
-    // _addPost(newPostText) {
-    //     let newPost = {
-    //         id: 4, userImg: dialogs, message: newPostText, likesCount: 0
-    //     };
-    //     this._state.profilePage.postsData.push(newPost);
-    //     this._callSubscriber(this.state)
-    // },
-    // _updateNewPostText(newPostText) {
-    //     this._state.profilePage.newPostText = newPostText;
-    //     this._callSubscriber(this.state)
-    // },
 
     dispatch(action) {
         switch (action.type) {

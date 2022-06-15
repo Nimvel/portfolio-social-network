@@ -21,7 +21,8 @@ function App({ state, dispatch, ...props }) {
           <Route path='/profile' element={<Profile
             profilePage={state.profilePage}
             dispatch={dispatch} />} />
-          <Route path='/dialogs' element={<Dialogs />} />
+          <Route path='/dialogs*' element={<Dialogs 
+            dialogsPage={state.dialogsPage}/>} />
           <Route path='/friends' element={<Friends />} />
           <Route path='/users' element={<Users />} />
         </Routes>

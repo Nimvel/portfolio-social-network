@@ -1,0 +1,39 @@
+.dialog {
+    width: 20rem;
+    height: 3rem;
+    border: rgb(194, 198, 197) solid 0.1rem;
+    border-radius: 1rem;
+}
+
+.dialog:hover {
+    width: 20rem;
+    height: 4rem;
+    border-color: rgb(113, 86, 120);
+}
+
+.dialog img {
+    width: 40px;;
+    height: 40px;
+}
+
+.item {
+    text-decoration: none;
+    color: rgb(194, 198, 197)
+}
+
+.item:hover {
+    color: rgb(113, 86, 120);
+}
+
+.active {
+    text-decoration: none;
+    color: rgb(113, 86, 120);
+}
+
+.comrade_name {
+
+}
+
+.last_message {
+
+}
