@@ -1,11 +1,10 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+import style from './NewPost.module.css';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/state';
 
 const NewPost = ( {newPostText, dispatch, ...props} ) => {
-    let postText = React.createRef();
-
-    let onPostChange = () => {
-        let text = postText.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         dispatch(updateNewPostTextActionCreator(text))
         }
         
@@ -14,8 +13,8 @@ const NewPost = ( {newPostText, dispatch, ...props} ) => {
     }
 
     return (
-        <div>
-                <textarea placeholder='Enter your post' value={newPostText} ref={postText} onChange={onPostChange} />
+        <div className={style.new_post} >
+                <textarea placeholder='Enter your post' value={newPostText} onChange={onPostChange} />
                 <button onClick={addNewPost} >add post</button>
         </div>
     )

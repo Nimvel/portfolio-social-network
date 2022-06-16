@@ -4,12 +4,12 @@
 }
 
 .item:hover {
-    color: rgb(113, 86, 120);
+    color: #715678;
 }
 
 .active {
     text-decoration: none;
-    color: rgb(113, 86, 120);
+    color: #715678;
 }
 
 .dialog {
@@ -22,14 +22,16 @@
     width: 20rem;
     height: 3.5rem;
     margin-bottom: 0.5rem;
-    border: rgb(194, 198, 197) solid 0.1rem;
+    padding: 0.2rem;
+    border: #c2c6c5 solid 0.1rem;
     border-radius: 1rem;
 }
 
 .dialog:hover {
     width: 20rem;
-    height: 4rem;
-    border-color: rgb(113, 86, 120);
+    border-color: #715678;
+    padding: 0.5rem 0.2rem;
+
 }
 
 .comrade_img {

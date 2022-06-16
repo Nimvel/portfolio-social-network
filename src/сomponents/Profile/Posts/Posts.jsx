@@ -1,9 +1,12 @@
 import Post from "./Post/Post";
+import style from './Posts.module.css';
 
-const Posts = ( {posts, ...props} ) => {
-    let postsElements = posts.map( p => <Post key={p.id} img={p.userImg} message={p.message} likes={p.likesCount} />)
+const Posts = ( {posts, dispatch, ...props} ) => {
+    let postsElements = posts.map( p => 
+    <Post key={p.id} id={p.id} dispatch={dispatch} comradeImg={p.comradeImg} comradeName={p.comradeName} message={p.message} likes={p.likesCount} />)
+
     return (
-        <div>
+        <div className={style.posts} >
                 {postsElements}
         </div>
     )

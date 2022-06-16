@@ -9,10 +9,8 @@ const Navbar = ({ navData, ...props }) => {
                 <div className={style.logo}>
                     <img src={logo} alt='logo' />
                 </div>
-                <div className={style.social_network_name}> Name
-                    <div className={style.social_network}>
+                <div className={style.social_network_name}>
                         social network
-                    </div>
                 </div>
             </div>
             <div className={style.login_or_profile}>

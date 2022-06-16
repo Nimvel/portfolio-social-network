@@ -30,7 +30,7 @@ let images = {
 }
 
 let size = '50px';
-let size_active = '80px';
+let size_active = '60px';
 
 export const StyledNavLink = styled(NavLink)`
 ${props => props.name && css`
@@ -45,6 +45,7 @@ ${props => props.name && css`
         background-size: ${size_active};
         width: ${size_active};
         height: ${size_active};
+        transform: translate(-5px);
     }
     &.active{
         background-image: url(${images[props.name + "_active"]});

@@ -1,12 +1,9 @@
-import NewPost from "./Posts/NewPost";
+import NewPost from "./Posts/Post/NewPost";
 import Posts from "./Posts/Posts";
 
 const Profile = ( {profilePage, dispatch, ...props} ) => {
     return (
         <div>
-            <div>
-                Posts
-            </div>
             <div>
                 <NewPost 
                 newPostText={profilePage.newPostText} 
@@ -14,7 +11,8 @@ const Profile = ( {profilePage, dispatch, ...props} ) => {
             </div>
             <div>
                 <Posts 
-                posts={profilePage.postsData} />
+                posts={profilePage.postsData}
+                dispatch={dispatch} />
             </div>
         </div>
     )

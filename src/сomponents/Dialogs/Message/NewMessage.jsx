@@ -2,10 +2,9 @@ import React from 'react';
 import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state';
 
 const NewMessage = ({ newMessageText, dispatch, ...props }) => {
-    let messageText = React.createRef();
 
-    let onMessageChange = () => {
-        let text = messageText.current.value;
+    let onMessageChange = (e) => {
+        let text = e.target.value;
         dispatch(updateNewMessageTextActionCreator(text));
     }
 
@@ -15,7 +14,7 @@ const NewMessage = ({ newMessageText, dispatch, ...props }) => {
 
     return (
         <div>
-            <textarea ref={messageText} onChange={onMessageChange} value={newMessageText} placeholder='Enter your message' />
+            <textarea onChange={onMessageChange} value={newMessageText} placeholder='Enter your message' />
             <button onClick={sendMessage} > Send message </button>
         </div>
     )

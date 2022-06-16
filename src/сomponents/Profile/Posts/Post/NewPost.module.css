@@ -1,0 +1,31 @@
+.new_post {
+    display: grid;
+    grid-template-columns: 15rem 5rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    gap: 1rem;
+}
+
+.new_post textarea {
+    border: #c2c6c5 solid 0.1rem;
+    border-radius: 0.5rem;
+    font-size: 15px;
+
+}
+
+.new_post button {
+    border: #c2c6c5 solid 0.1rem;
+    border-radius: 0.5rem;
+    /* background: linear-gradient(90deg, #c1b0c8, #715678); */
+    background: #c1b0c8;
+    color: white;
+    font-size: 13px;
+    width: 5rem;
+    height: 2rem;
+}
+
+.new_post button:hover {
+    background: #715678;
+    font-size: 14px;
+
+}

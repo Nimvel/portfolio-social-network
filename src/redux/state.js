@@ -5,13 +5,15 @@ import lucifer from "../assets/avatars/lucifer_face.jpg";
 
 let ADD_POST = 'ADD_POST';
 let UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+let LIKE = 'LIKE';
+
 let SEND_MESSAGE = 'SEND_MESSAGE';
 let UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT';
 
 let store = {
     _state: {
         colors: [
-            '#f4f4f4', '#c2c6c5', '#939393', '#c1b0c8','#715678'
+            '#f4f4f4', '#c2c6c5', '#939393', '#c1b0c8', '#715678'
         ],
         navData: [
             { id: 1, name: 'profile', },
@@ -23,9 +25,9 @@ let store = {
         ],
         profilePage: {
             postsData: [
-                { id: 1, userImg: comrade, message: 'one', likesCount: 0 },
-                { id: 2, userImg: comrade, message: 'two', likesCount: 4 },
-                { id: 3, userImg: comrade, message: 'three', likesCount: 9 }
+                { id: 1, comradeName: 'Kurapika', comradeImg: kurapika, message: 'The only principle is that there are no principles.', likesCount: 0, isLiked: false },
+                { id: 2, comradeName: 'Lady Maria', comradeImg: ladyMaria, message: 'Hm... A visitor? How unexpected...', likesCount: 4, isLiked: false },
+                { id: 3, comradeName: 'Lucifer', comradeImg: lucifer, message: 'Are you offering me chocolate pancakes?', likesCount: 9, isLiked: false }
             ],
             newPostText: '',
         },
@@ -64,8 +66,20 @@ let store = {
                 this._callSubscriber(this._state)
                 break;
 
+            case LIKE:
+                let id;
+                for (let i = 0; i < this._state.profilePage.postsData.length; i++) {
+                    if (this._state.profilePage.postsData[i].id === action.id) id = i;
+                }
+                if (!this._state.profilePage.postsData[id].isLiked) {
+                    this._state.profilePage.postsData[id].likesCount++;
+                    this._state.profilePage.postsData[id].isLiked = true;
+                    this._callSubscriber(this._state)
+                }
+                break;
+
             case SEND_MESSAGE:
-                let newMessage = {id: 4, comradeId: 3, message: this._state.dialogsPage.newMessageText }
+                let newMessage = { id: 4, comradeId: 3, message: this._state.dialogsPage.newMessageText }
                 this._state.dialogsPage.messagesData.push(newMessage);
                 this._state.dialogsPage.newMessageText = '';
                 this._callSubscriber(this._state);
@@ -81,6 +95,8 @@ let store = {
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
 export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newPostText: text });
+export const likeActionCreator = (id) => ({ type: LIKE, id });
+
 export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE });
 export const updateNewMessageTextActionCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newMessageText: text });
 
