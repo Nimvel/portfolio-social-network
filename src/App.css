@@ -4,8 +4,8 @@
   'navbar header'
   'navbar content';
   grid-template-columns: 20% 80%;
-  grid-template-rows: 10% 90%;
-  position: absolute;
+  grid-template-rows: 7% 93%;
+  position: fixed;
   width: 100%;
   height: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -15,6 +15,7 @@
 .header {
   grid-area: header;
   padding: 1rem;
+  border-bottom: rgb(194, 198, 197) solid 0.1rem;
 }
 
 .content {

@@ -1,21 +1,44 @@
 .navbar {
     grid-area: navbar;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #EECFBA, #C5DDE8);
+    position: fixed;
+    background-color: #f4f4f4;
+    width: 20%;
+    max-width: 17rem;
+    height: 50rem;
   }
 
-.social_network_name {
+.denomination {
     position: relative;
     display: block;
-    /* border: violet 0.1rem solid; */
-    border-radius: 1rem;
+    background: linear-gradient(45deg, #c1b0c8, #715678);
     width: 100%;
     height: 40%;
+    /* padding-top: 35%; */
 }
 
-#login_or_profile {
+.logo {
+    padding-top: 25%;
+    padding-left: 50%;
+    transform: translate(-35px);
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+}
+
+.social_network_name {
+    color: white;
+    font-size: 25px; 
+    text-align: center;
+    /* padding-top: 60%; */
+}
+
+.social_network {
+    font-size: 15px; 
+}
+
+.login_or_profile {
     position: absolute;
     background-color: white;
     border-radius: 1rem;
@@ -24,18 +47,32 @@
     transform: translate(-50%);
     width: 80%;
     height: 25%;
-    /* z-index: 2; */
 }
 
 .navigation {
-    background-color: rgb(250, 236, 242);
+    position: relative;
+    padding-left: 50%;
+    padding-top: 50%;
+    transform: translate(-5.5rem) ;
+    display: grid;
+    grid-template-areas: 
+    'profile dialogs'
+    'friends photo'
+    'users settings' ;
+    grid-template-columns: 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem;
+    gap: 2rem;
     width: 100%;
     height: 100%;
 }
 
-/* .navigation_wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    flex-wrap: wrap;
+/* .navigation_item {
+    grid-area: i;
 } */
+
+.profile { grid-area: profile; }
+.dialogs { grid-area: dialogs; }
+.friends { grid-area: friends; }
+.users { grid-area: users; }
+.settings { grid-area: settings; }
+.photo { grid-area: photo; }

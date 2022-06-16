@@ -1,1 +1,26 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100%;
+    margin-right: 3rem;
+}
 
+.messages{
+    border: #c2c6c5 solid 0.1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: linear-gradient(45deg, #c1b0c8, #715678);
+}
+
+.message{
+    border: #939393 solid 0.1rem;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
+    width: 15rem;
+    background: white;
+}
+
+.new_message {
+
+}

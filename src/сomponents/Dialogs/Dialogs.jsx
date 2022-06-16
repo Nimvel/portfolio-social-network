@@ -1,14 +1,33 @@
+// import { Route, Routes } from "react-router-dom";
+
+import style from './Dialogs.module.css';
 import Comrade from './Comrade/Comrade';
-import Messages from './Messages/Messages';
+import Message from './Message/Message';
+import NewMessage from "./Message/NewMessage";
 
+const Dialogs = ({ dialogsPage, dispatch, ...props }) => {
 
-const Dialogs = ({ dialogsPage, ...props }) => {
     let comradesElements = dialogsPage.comradesData.map(c =>
-        <Comrade comradeImg={c.comradeImg} comradeName={c.comradeName} comradeId={c.comradeId} lastMessage={c.lastMessage} key={c.id} />)
+        <Comrade comradeImg={c.comradeImg} comradeName={c.comradeName} comradeId={c.comradeId} lastMessage={c.lastMessage} key={c.id} />);
+
+    let messagesElements = dialogsPage.messagesData.map(m =>
+        // <Route path={`/dialogs/${m.comradeId}`} element={
+        <Message message={m.message} key={m.id} />)
+    // } />;
+
     return (
-        <div>
-            {comradesElements}
-            <Messages messagesData={dialogsPage.messagesData} newMessageText={dialogsPage.newMessageText} />
+        <div className={style.dialogs}>
+            <div>
+                {comradesElements}
+            </div>
+            <div className={style.messages}>
+                {/* <Routes> */}
+                {messagesElements}
+                {/* </Routes> */}
+                <div className={style.new_message}>
+                    <NewMessage dispatch={dispatch} newMessageText={dialogsPage.newMessageText} />
+                </div>
+            </div>
         </div>
     )
 }

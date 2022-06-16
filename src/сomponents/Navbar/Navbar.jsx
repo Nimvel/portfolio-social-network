@@ -1,18 +1,24 @@
 import style from './Navbar.module.css';
 import NavigationLink from './NavLink/NavigationLink';
+import logo from '../../assets/icons/logo.png';
 
-const Navbar = ( {navData, ...props} ) => {
+const Navbar = ({ navData, ...props }) => {
     return (
         <div className={style.navbar}>
-            <div className={style.social_network_name}>
-                social network name
+            <div className={style.denomination}>
+                <div className={style.logo}>
+                    <img src={logo} alt='logo' />
+                </div>
+                <div className={style.social_network_name}> Name
+                    <div className={style.social_network}>
+                        social network
+                    </div>
+                </div>
             </div>
-            <div id={style.login_or_profile}>
+            <div className={style.login_or_profile}>
                 login or profile
             </div>
-            <div className={style.navigation}>
-                <NavigationLink navData={navData} />
-            </div>
+            <NavigationLink navData={navData} />
         </div>
     )
 }

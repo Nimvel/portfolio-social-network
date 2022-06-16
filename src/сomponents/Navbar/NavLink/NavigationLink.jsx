@@ -1,14 +1,17 @@
 import style from '../Navbar.module.css';
 import { StyledNavLink } from './StyledNavLink';
 
-const NavigationLink = ( {navData, ...props} ) => {
+const NavigationLink = ({ navData, ...props }) => {
 
-    let navLinkElements = navData.map(n => <StyledNavLink to={`/${n.name}`} key={n.id} name={n.name} /> )
+    let navLinkElements = navData.map(n =>
+        <div className={style[n.name]}>
+            <StyledNavLink to={`/${n.name}`} key={n.id} name={n.name} />
+        </div>)
 
     return (
-            <div className={style.navigation_wrapper}>
-                {navLinkElements}
-            </div>
+        <div className={style.navigation}>
+            {navLinkElements}
+        </div>
     )
 }
 

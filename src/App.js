@@ -5,6 +5,8 @@ import Friends from './сomponents/Friends/Friends';
 import Header from './сomponents/Header/Header';
 import Navbar from './сomponents/Navbar/Navbar';
 import Profile from './сomponents/Profile/Profile';
+import Photo from './сomponents/Photo/Photo';
+import Settings from './сomponents/Settings/Settings';
 import Users from './сomponents/Users/Users';
 
 function App({ state, dispatch, ...props }) {
@@ -21,9 +23,12 @@ function App({ state, dispatch, ...props }) {
           <Route path='/profile' element={<Profile
             profilePage={state.profilePage}
             dispatch={dispatch} />} />
-          <Route path='/dialogs*' element={<Dialogs 
-            dialogsPage={state.dialogsPage}/>} />
+          <Route path='/dialogs/*' element={<Dialogs 
+            dialogsPage={state.dialogsPage}
+            dispatch={dispatch}/>} />
           <Route path='/friends' element={<Friends />} />
+          <Route path='/photo' element={<Photo />} />
+          <Route path='/settings' element={<Settings />} />
           <Route path='/users' element={<Users />} />
         </Routes>
       </div>
