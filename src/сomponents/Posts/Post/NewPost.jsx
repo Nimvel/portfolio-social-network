@@ -1,6 +1,6 @@
 import React from 'react';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/posts-reducer';
 import style from './NewPost.module.css';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profile-reducer';
 
 const NewPost = ( {newPostText, dispatch, ...props} ) => {
     let onPostChange = (e) => {
@@ -15,7 +15,7 @@ const NewPost = ( {newPostText, dispatch, ...props} ) => {
     return (
         <div className={style.new_post} >
                 <textarea placeholder='Enter your post' value={newPostText} onChange={onPostChange} />
-                <button onClick={addNewPost} >add post</button>
+                <button className={style.pulsing} onClick={addNewPost} >add post</button>
         </div>
     )
 }

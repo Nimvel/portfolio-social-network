@@ -1,9 +1,9 @@
-import { likeActionCreator } from '../../../../redux/profile-reducer';
-import style from '../../Profile.module.css';
+import { likeActionCreator } from '../../../redux/posts-reducer';
+import style from '../Posts.module.css';
 
 const Post = ({ dispatch, comradeImg, comradeName, message, likes, id, ...props }) => {
     let like = () => {
-        dispatch(likeActionCreator(id));
+        dispatch(likeActionCreator (id));
     }
 
     return (

@@ -7,7 +7,7 @@ const Navbar = ({ navData, ...props }) => {
         <div className={style.navbar}>
             <div className={style.denomination}>
                 <div className={style.logo}>
-                    <img src={logo} alt='logo' />
+                    <img src={logo} alt='logo'/>
                 </div>
                 <div className={style.social_network_name}>
                         social network

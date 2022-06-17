@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 
 import profile from "../../../assets/icons/profile.png";
 import profile_active from "../../../assets/icons/profile_active.png";
+import posts from "../../../assets/icons/posts.png";
+import posts_active from "../../../assets/icons/posts_active.png";
 import dialogs from "../../../assets/icons/dialogs.png";
 import dialogs_active from "../../../assets/icons/dialogs_active.png";
 import friends from "../../../assets/icons/friends.png";
@@ -17,6 +19,8 @@ import photos_active from "../../../assets/icons/photos_active.png"
 let images = {
     profile,
     profile_active,
+    posts,
+    posts_active,
     dialogs,
     dialogs_active,
     friends,

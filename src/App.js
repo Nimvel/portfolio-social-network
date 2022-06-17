@@ -8,6 +8,7 @@ import Profile from './сomponents/Profile/Profile';
 import Photos from './сomponents/Photos/Photos';
 import Settings from './сomponents/Settings/Settings';
 import Users from './сomponents/Users/Users';
+import Posts from './сomponents/Posts/Posts';
 
 function App({ state, dispatch, ...props }) {
   return (
@@ -22,6 +23,9 @@ function App({ state, dispatch, ...props }) {
         <Routes>
           <Route path='/profile' element={<Profile
             profilePage={state.profilePage}
+            dispatch={dispatch} />} />
+          <Route path='/posts' element={<Posts
+            postsPage={state.postsPage}
             dispatch={dispatch} />} />
           <Route path='/dialogs/*' element={<Dialogs 
             dialogsPage={state.dialogsPage}
