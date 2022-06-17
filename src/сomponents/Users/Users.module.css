@@ -1,1 +1,38 @@
+.usersPage {
+    position: relative;
+    top: 2rem;
 
+    display: grid;
+    grid-template-areas: 
+    'users active_friends';
+    grid-template-columns: 42rem;
+}
+
+.users {
+    grid-area: users;
+
+    position: relative;
+    left: 2rem;
+    right: 2rem;
+    margin-right: 2rem;
+
+    border-right: rgb(194, 198, 197) solid 0.1rem;
+}
+
+.active_friends {
+    grid-area: active_friends;
+    
+    margin-left: 1rem;
+}
+
+@media (max-width: 1250px) {
+    .usersPage {
+        grid-template-areas: 
+        'users';
+        grid-template-columns: 42rem;
+    }
+
+    .active_friends {
+        display: none;
+    }
+  }

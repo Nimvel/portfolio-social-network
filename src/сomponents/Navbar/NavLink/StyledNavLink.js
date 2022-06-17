@@ -11,8 +11,8 @@ import users from "../../../assets/icons/users.png";
 import users_active from "../../../assets/icons/users_active.png";
 import settings from "../../../assets/icons/settings.png"
 import settings_active from "../../../assets/icons/settings_active.png"
-import photo from "../../../assets/icons/photo.png"
-import photo_active from "../../../assets/icons/photo_active.png"
+import photos from "../../../assets/icons/photos.png"
+import photos_active from "../../../assets/icons/photos_active.png"
 
 let images = {
     profile,
@@ -25,8 +25,8 @@ let images = {
     users_active,
     settings,
     settings_active,
-    photo,
-    photo_active
+    photos,
+    photos_active
 }
 
 let size = '50px';
@@ -59,5 +59,5 @@ ${props => props.name && css`
         height: ${size_active};
     }
     `
-}`;
+    }`;
 

@@ -5,13 +5,13 @@ import Friends from './сomponents/Friends/Friends';
 import Header from './сomponents/Header/Header';
 import Navbar from './сomponents/Navbar/Navbar';
 import Profile from './сomponents/Profile/Profile';
-import Photo from './сomponents/Photo/Photo';
+import Photos from './сomponents/Photos/Photos';
 import Settings from './сomponents/Settings/Settings';
 import Users from './сomponents/Users/Users';
 
 function App({ state, dispatch, ...props }) {
   return (
-    <div className="App">
+    <div className='App'>
       <div className='header'>
         <Header />
       </div>
@@ -27,7 +27,7 @@ function App({ state, dispatch, ...props }) {
             dialogsPage={state.dialogsPage}
             dispatch={dispatch}/>} />
           <Route path='/friends' element={<Friends />} />
-          <Route path='/photo' element={<Photo />} />
+          <Route path='/photos' element={<Photos photosPage={state.photosPage} />} />
           <Route path='/settings' element={<Settings />} />
           <Route path='/users' element={<Users />} />
         </Routes>

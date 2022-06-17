@@ -1,5 +1,5 @@
-import { likeActionCreator } from '../../../../redux/state';
-import style from '../Posts.module.css';
+import { likeActionCreator } from '../../../../redux/profile-reducer';
+import style from '../../Profile.module.css';
 
 const Post = ({ dispatch, comradeImg, comradeName, message, likes, id, ...props }) => {
     let like = () => {
@@ -16,7 +16,7 @@ const Post = ({ dispatch, comradeImg, comradeName, message, likes, id, ...props 
                 {message}
             </div>
             <div className={style.likes}>
-                <span onClick={like}>Likes</span> {likes}
+                <span onClick={like}>Likes {likes}</span>
             </div>
         </div>
     )

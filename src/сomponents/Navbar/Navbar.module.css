@@ -4,6 +4,7 @@
     background-color: #f4f4f4;
     width: 15rem;
     height: 50rem;
+    transition: 250ms;
 }
 
 .denomination {
@@ -12,6 +13,7 @@
     background: linear-gradient(45deg, #c1b0c8, #715678);
     width: 100%;
     height: 40%;
+    user-select: none;
 }
 
 .logo {
@@ -53,13 +55,15 @@
     display: grid;
     grid-template-areas: 
     'profile dialogs'
-    'friends photo'
+    'friends photos'
     'users settings' ;
     grid-template-columns: 4rem 4rem;
     grid-template-rows: 4rem 4rem 4rem;
     gap: 2rem;
     width: 100%;
     height: 100%;
+    user-select: none;
+    transition: 350ms;
 }
 
 .profile { grid-area: profile; }
@@ -67,7 +71,7 @@
 .friends { grid-area: friends; }
 .users { grid-area: users; }
 .settings { grid-area: settings; }
-.photo { grid-area: photo; }
+.photos { grid-area: photos; }
 
 @media (max-width: 1000px) {
     .navbar {
@@ -104,7 +108,7 @@
         transform: translate(-50%) ;
         display: grid;
         grid-template-areas: 
-        'profile' 'dialogs' 'friends' 'photo' 'users' 'settings';
+        'profile' 'dialogs' 'friends' 'photos' 'users' 'settings';
         grid-template-rows: 4rem 4rem 4rem 4rem 4rem 4rem;
         gap: 1rem;
     }

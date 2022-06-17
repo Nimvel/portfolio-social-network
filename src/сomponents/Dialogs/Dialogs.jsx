@@ -17,7 +17,7 @@ const Dialogs = ({ dialogsPage, dispatch, ...props }) => {
 
     return (
         <div className={style.dialogs}>
-            <div>
+            <div className={style.comrades}>
                 {comradesElements}
             </div>
             <div className={style.messages}>

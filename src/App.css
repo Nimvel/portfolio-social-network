@@ -5,7 +5,6 @@
   'navbar content';
   grid-template-columns: 15rem;
   grid-template-rows: 7% 93%;
-  gap: 1rem;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -14,13 +13,19 @@
 }
 
 .header {
+  position: relative;
   grid-area: header;
   padding-top: 1rem;
+  left: 1rem;
   border-bottom: rgb(194, 198, 197) solid 0.1rem;
 }
 
 .content {
   grid-area: content;
+}
+
+.active_friends {
+  grid-area: active_friends;
 }
 
 @media (max-width: 1000px) {

@@ -1,18 +1,21 @@
+import ActiveFriends from "../Friends/ActiveFriends";
 import NewPost from "./Posts/Post/NewPost";
 import Posts from "./Posts/Posts";
+import style from './Profile.module.css';
 
-const Profile = ( {profilePage, dispatch, ...props} ) => {
+const Profile = ({ profilePage, dispatch, ...props }) => {
     return (
-        <div>
-            <div>
-                <NewPost 
-                newPostText={profilePage.newPostText} 
-                dispatch={dispatch} />
+        <div className={style.postsPage}>
+            <div className={style.posts}>
+                    <NewPost
+                        newPostText={profilePage.newPostText}
+                        dispatch={dispatch} />
+                    <Posts
+                        posts={profilePage.postsData}
+                        dispatch={dispatch} />
             </div>
-            <div>
-                <Posts 
-                posts={profilePage.postsData}
-                dispatch={dispatch} />
+            <div className={style.active_friends}>
+                <ActiveFriends />
             </div>
         </div>
     )
