@@ -3,7 +3,7 @@ import Photo from './Photo';
 import ActiveFriends from '../Friends/ActiveFriends';
 
 const Photos = ( {photosPage, ...props} ) =>  {
-    let photosElements = photosPage.map (p => <Photo key={p.id} photo={p.photo}/>)
+    let photosElements = photosPage.photosData.map (p => <Photo key={p.id} photo={p.photo}/>)
     return (
         <div className={style.photosPage}>
             <div className={style.photos}>

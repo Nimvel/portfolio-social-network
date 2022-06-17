@@ -1,4 +1,6 @@
-const profileReducer = (state, action) => {
+let initialState = {}
+
+const profileReducer = (state = initialState, action) => {
     return state;
 }
 

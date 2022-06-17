@@ -28,6 +28,19 @@
     height: 110px;
 }
 
+.logo img:hover {
+    animation: rotate 5s infinite linear;
+  }
+  
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+      }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .social_network_name {
     color: white;
     cursor: default;

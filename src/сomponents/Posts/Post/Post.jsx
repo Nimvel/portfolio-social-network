@@ -1,11 +1,10 @@
-import { likeActionCreator } from '../../../redux/posts-reducer';
 import style from '../Posts.module.css';
 
-const Post = ({ dispatch, comradeImg, comradeName, message, likes, id, ...props }) => {
-    let like = () => {
-        dispatch(likeActionCreator (id));
+const Post = ({ like, comradeImg, comradeName, message, likes, id, ...props }) => {
+    let onClick = () => {
+        like(id);
     }
-
+    
     return (
         <div className={style.post}>
             <img src={comradeImg} className={style.comrade_img} alt='user avatar' />
@@ -16,7 +15,7 @@ const Post = ({ dispatch, comradeImg, comradeName, message, likes, id, ...props 
                 {message}
             </div>
             <div className={style.likes}>
-                <span onClick={like}>Likes {likes}</span>
+                <span onClick={onClick}>Likes {likes}</span>
             </div>
         </div>
     )

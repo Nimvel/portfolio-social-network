@@ -10,14 +10,14 @@ import Settings from './сomponents/Settings/Settings';
 import Users from './сomponents/Users/Users';
 import Posts from './сomponents/Posts/Posts';
 
-function App({ state, dispatch, ...props }) {
+function App( {state, dispatch, ...props} ) {
   return (
     <div className='App'>
       <div className='header'>
         <Header />
       </div>
       <div>
-        <Navbar navData={state.navData} />
+        <Navbar navigationPage={state.navigationPage} />
       </div>
       <div className='content'>
         <Routes>

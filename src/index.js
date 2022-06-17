@@ -22,7 +22,10 @@ export let rerender = () => {
 
 rerender(store.getState());
 
-store._subscribe(rerender);
+store.subscribe( () => {
+  let state = store.getState();
+  rerender(state);
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
